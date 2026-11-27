@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SKALA — Surgical Brutalist Fine Jewelry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Charm serves as open-source upright calligraphic match for Charme Con Roman (used strictly on brand logo only) -->
+  <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="mode-home">
+  <!-- Minimal Top Panel: Left Menu (3 lines), Center SKALA Logo (Charme Con Roman), Right Cart Icon -->
+  <header class="top-panel" id="topPanel">
+    <button
+      class="icon-btn menu-trigger"
+      id="menuToggleBtn"
+      type="button"
+      aria-label="Open collection menu"
+      aria-expanded="false"
+    >
+      <span class="hamburger-lines" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+
+    <a href="#/" class="brand-logo" id="brandLogoLink" aria-label="SKALA Home">SKALA</a>
+
+    <button
+      class="icon-btn cart-trigger"
+      id="cartToggleBtn"
+      type="button"
+      aria-label="Open requisition bag"
+      aria-expanded="false"
+    >
+      <svg
+        class="cart-svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="square"
+        stroke-linejoin="miter"
+        aria-hidden="true"
+      >
+        <path d="M2 3h3l2.2 11.2a1 1 0 0 0 1 .8h9.6a1 1 0 0 0 1-.8L21 7H6.2" />
+        <circle cx="9.5" cy="19.5" r="1.4" fill="currentColor" stroke="none" />
+        <circle cx="17.5" cy="19.5" r="1.4" fill="currentColor" stroke="none" />
+      </svg>
+      <span class="cart-count" id="cartCountBadge" hidden>0</span>
+    </button>
+  </header>
+
+  <!-- HOME VIEW: Full-Bleed Zero-Gap Split-Screen Video Frames + Minimal Footer -->
+  <main id="homeView" class="home-view" aria-label="SKALA Collection Frames">
+    <div id="framesContainer" class="frames-container"></div>
+
+    <footer class="site-footer" id="siteFooter">
+      <div class="footer-rule" aria-hidden="true"></div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <button type="button" class="footer-link" data-info-key="customer-care">CUSTOMER CARE</button>
+        <button type="button" class="footer-link" data-info-key="about-us">ABOUT US</button>
+        <button type="button" class="footer-link" data-info-key="the-guild">THE GUILD</button>
+        <button type="button" class="footer-link" data-info-key="legal-area">LEGAL AREA</button>
+        <button type="button" class="footer-link" data-info-key="careers">CAREERS</button>
+        <button type="button" class="footer-link" data-info-key="social">SOCIAL</button>
+      </nav>
+    </footer>
+  </main>
+
+  <!-- PRODUCT DETAIL VIEW: Full-Viewport Obsidian Stage + Precision Watch-Gear Orbital Switcher -->
+  <section id="productView" class="product-view" aria-label="Single Product Showcase" hidden>
+    <div class="product-ambient-veil" id="productAmbientVeil" aria-hidden="true"></div>
+
+    <div class="product-layout">
+      <!-- Left Side: Bold Ring Title & Brief Poetic Note on Craft -->
+      <aside class="product-left">
+        <div class="product-meta-top">
+          <button type="button" class="back-collection-btn" id="backToHomeBtn">
+            <span class="arrow-glyph" aria-hidden="true">&#8592;</span> COLLECTION
+          </button>
+          <span class="product-counter" id="productCounter">01 / 04</span>
+        </div>
+
+        <div class="product-editorial" id="productEditorial">
+          <p class="product-series-code" id="productSeriesCode">SPECIMEN // 01</p>
+          <h1 class="product-title" id="productTitle">SUTURE NOIR</h1>
+          <p class="product-spec" id="productSpec"></p>
+          <p class="product-craft-note" id="productCraftNote"></p>
+        </div>
+
+        <div class="product-gear-controls">
+          <button
+            type="button"
+            class="gear-nav-btn"
+            id="prevRingBtn"
+            aria-label="Previous ring"
+          >
+            <span aria-hidden="true">&#8592;</span> PREV
+          </button>
+          <div class="gear-dots" id="gearDots" role="tablist" aria-label="Select ring specimen"></div>
+          <button
+            type="button"
+            class="gear-nav-btn"
+            id="nextRingBtn"
+            aria-label="Next ring"
+          >
+            NEXT <span aria-hidden="true">&#8594;</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Center Stage: Obsidian Black Backdrop & Precision Watch-Gear Orbital Ring Stage -->
+      <div
+        class="product-center-stage"
+        id="orbitalStage"
+        role="button"
+        tabindex="0"
+        aria-label="Interactive jewelry turntable. Click or swipe left or right to rotate to the next piece."
+      >
+        <div class="stage-rim-glow" id="stageRimGlow" aria-hidden="true"></div>
+
+        <div class="orbital-track" id="orbitalTrack">
+          <div class="orbital-item" id="orbitalSlotA">
+            <img src="" alt="" draggable="false" />
+          </div>
+          <div class="orbital-item" id="orbitalSlotB">
+            <img src="" alt="" draggable="false" />
+          </div>
+        </div>
+
+        <div class="stage-hint" aria-hidden="true">
+          <span>CLICK OR SWIPE TO ROTATE SPECIMEN</span>
+        </div>
+      </div>
+
+      <!-- Right Side: Crisp Macro Close-Up Thumbnail Worn on Hand + Minimal Acquire Button -->
+      <aside class="product-right" id="productRightPanel">
+        <figure class="hand-macro-card">
+          <div class="hand-macro-frame">
+            <img
+              id="handMacroImg"
+              src=""
+              alt="Macro close-up of the piece worn on a physician hand"
+            />
+          </div>
+          <figcaption class="hand-macro-caption" id="handMacroCaption">
+            CLINICAL FIT — RESTING HAND STUDY
+          </figcaption>
+        </figure>
+
+        <div class="acquire-block">
+          <div class="acquire-price-row">
+            <span class="acquire-label">ALLOCATION</span>
+            <span class="acquire-price" id="productPrice">$3,850</span>
+          </div>
+
+          <div class="size-selector" id="sizeSelector" role="radiogroup" aria-label="Select ring caliper">
+            <button type="button" class="size-pill" data-size="16mm (6)">16mm</button>
+            <button type="button" class="size-pill is-active" data-size="17.3mm (7)">17.3mm</button>
+            <button type="button" class="size-pill" data-size="18.1mm (8)">18.1mm</button>
+            <button type="button" class="size-pill" data-size="19mm (9)">19mm</button>
+          </div>
+
+          <button type="button" class="acquire-btn" id="acquireBtn">
+            Acquire
+          </button>
+          <p class="acquire-feedback" id="acquireFeedback" aria-live="polite"></p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- LEFT NAVIGATION DRAWER -->
+  <aside class="drawer-backdrop" id="menuBackdrop" hidden></aside>
+  <nav class="brutalist-drawer drawer-left" id="menuDrawer" aria-label="Primary navigation" hidden>
+    <div class="drawer-header">
+      <span class="drawer-title">INDEX // ARCHIVE</span>
+      <button type="button" class="drawer-close" id="closeMenuBtn" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="drawer-body">
+      <p class="drawer-manifesto">
+        FORGED FOR PHYSICIANS, SURGEONS, RESIDENTS &amp; ARCHITECTURAL HANDS. ZERO CATCH GEOMETRY.
+      </p>
+      <ul class="drawer-nav-list" id="drawerProductList"></ul>
+      <div class="drawer-divider"></div>
+      <div class="drawer-meta-links">
+        <button type="button" class="drawer-text-link" data-jump-home="true">00 / ALL SPLIT FRAMES</button>
+        <button type="button" class="drawer-text-link" data-info-key="about-us">ABOUT SKALA</button>
+        <button type="button" class="drawer-text-link" data-info-key="the-guild">THE SURGICAL GUILD</button>
+        <button type="button" class="drawer-text-link" data-info-key="customer-care">AUTOCLAVE &amp; CARE</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- RIGHT CART / REQUISITION DRAWER -->
+  <aside class="drawer-backdrop" id="cartBackdrop" hidden></aside>
+  <aside class="brutalist-drawer drawer-right" id="cartDrawer" aria-label="Requisition bag" hidden>
+    <div class="drawer-header">
+      <span class="drawer-title">REQUISITION CASE</span>
+      <button type="button" class="drawer-close" id="closeCartBtn" aria-label="Close requisition case">&times;</button>
+    </div>
+    <div class="drawer-body cart-drawer-body">
+      <div id="cartItemsList" class="cart-items-list"></div>
+      <div class="cart-footer" id="cartFooter">
+        <div class="cart-total-row">
+          <span>TOTAL ALLOCATION</span>
+          <span id="cartTotalValue">$0</span>
+        </div>
+        <button type="button" class="acquire-btn cart-checkout-btn" id="checkoutBtn">
+          CONFIRM ALLOCATION
+        </button>
+        <p class="cart-confirmation" id="cartConfirmation" hidden></p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- FOOTER / INFO MODAL OVERLAY -->
+  <div class="info-modal-backdrop" id="infoModal" role="dialog" aria-modal="true" aria-labelledby="infoModalTitle" hidden>
+    <div class="info-modal-card">
+      <div class="info-modal-head">
+        <h2 id="infoModalTitle">ABOUT US</h2>
+        <button type="button" class="drawer-close" id="closeInfoModalBtn" aria-label="Close overlay">&times;</button>
+      </div>
+      <div class="info-modal-body" id="infoModalBody"></div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/transition.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
